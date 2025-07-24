@@ -1,0 +1,45 @@
+# Interfaz de usuario moderna
+customtkinter>=5.2.0
+
+# Comunicación HTTP para APIs de metadatos
+requests>=2.31.0
+
+# Procesamiento de imágenes
+Pillow>=10.0.0
+
+# Análisis de archivos de video (opcional)
+# ffmpeg-python>=0.2.0
+
+# Utilidades adicionales
+pathliblib>=1.0.1
+
+# Para manejo de fechas y tiempo
+python-dateutil>=2.8.2
+
+# Para validación de datos
+cerberus>=1.3.4
+
+# Para logging avanzado (opcional)
+coloredlogs>=15.0.1
+
+# Para manejo de configuración JSON
+jsonschema>=4.17.3
+
+# Para testing (desarrollo)
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Para análisis de código (desarrollo)
+flake8>=6.0.0
+black>=23.0.0
+
+# Dependencias del sistema (instalar manualmente):
+# - FFmpeg: https://ffmpeg.org/download.html
+# - Python 3.8+: https://www.python.org/downloads/
+
+# Notas de instalación:
+# 1. Instalar Python 3.8 o superior
+# 2. pip install -r requirements.txt
+# 3. Descargar e instalar FFmpeg
+# 4. Agregar FFmpeg al PATH del sistema
+# 5. python app/main.py

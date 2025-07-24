@@ -1,4 +1,4 @@
-# 📁 Organizador de Series v2.0
+# 📁 SeList v1
 
 Una aplicación completa para organizar, renombrar y convertir series de video con integración a Jellyfin y búsqueda automática de metadatos.
 

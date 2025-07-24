@@ -3,7 +3,7 @@
 Una aplicación completa para organizar, renombrar y convertir series de video con integración a Jellyfin y búsqueda automática de metadatos.
 
 ## M3U8 to MP4 Converter
-
+### recomiendo usar la extencion cocoCut [COCOCUT](https://chromewebstore.google.com/detail/descargador-de-videos-coc/ekhbcipncbkfpkaianbjbcbmfehjflpf?hl=es)
 Un sistema modular de conversión de archivos M3U8 a MP4 con interfaz gráfica moderna, desarrollado en Python usando Tkinter y FFmpeg.
 
 ## 🌟 Características Principales

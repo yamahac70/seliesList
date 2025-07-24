@@ -58,24 +58,24 @@ Un sistema modular de conversión de archivos M3U8 a MP4 con interfaz gráfica m
 ### 1. Clonar o descargar el proyecto
 ```bash
 git clone <url-del-repositorio>
-cd m3u8-to-mp4-converter
+cd proyectoEstructurado
 ```
 
 ### 2. Crear entorno virtual (recomendado)
 ```bash
-python -m venv venv_m3u8_converter
+python -m venv venv
 ```
 
 ### 3. Activar el entorno virtual
 
 **Windows:**
 ```bash
-venv_m3u8_converter\Scripts\activate
+venv\Scripts\activate
 ```
 
 **Linux/Mac:**
 ```bash
-source venv_m3u8_converter/bin/activate
+source venv/bin/activate
 ```
 
 ### 4. Instalar dependencias
@@ -83,12 +83,18 @@ source venv_m3u8_converter/bin/activate
 pip install -r requirements.txt
 ```
 
-### 5. Instalar FFmpeg
+### 5. FFmpeg (Incluido)
+
+El proyecto ya incluye FFmpeg en el directorio `bin/` con los siguientes ejecutables:
+- `ffmpeg.exe` - Convertidor principal
+- `ffplay.exe` - Reproductor multimedia
+- `ffprobe.exe` - Analizador de archivos multimedia
+
+**Instalación alternativa (opcional):**
 
 **Windows:**
 - Descargar desde [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html)
 - Extraer y agregar al PATH del sistema
-- O colocar `ffmpeg.exe` en el directorio del proyecto
 
 **Linux (Ubuntu/Debian):**
 ```bash
@@ -101,13 +107,29 @@ sudo apt install ffmpeg
 brew install ffmpeg
 ```
 
+## 🏗️ Arquitectura del Proyecto
+
+Este proyecto utiliza una **arquitectura modular MVC (Model-View-Controller)** que proporciona:
+
+- **📁 Separación clara de responsabilidades**: Cada componente tiene una función específica
+- **🔧 Fácil mantenimiento**: Código organizado y escalable
+- **🎨 Interfaz moderna**: Utiliza CustomTkinter para una UI atractiva
+- **⚡ Rendimiento optimizado**: Ejecución eficiente con threading para operaciones pesadas
+
+### Componentes principales:
+- **`app/main.py`**: Punto de entrada de la aplicación
+- **`app/controller.py`**: Lógica de control y coordinación
+- **`app/model.py`**: Modelos de datos y lógica de negocio
+- **`ui/main_window.py`**: Interfaz principal de usuario
+- **`ui/components/`**: Componentes específicos de la UI
+
 ## 📖 Uso
 
 ### 🚀 Ejecución rápida
 
 #### Menú Principal
 ```bash
-iniciar_menu.bat
+python app/main.py
 ```
 Este comando abre el menú principal moderno con interfaz CustomTkinter donde puedes elegir entre:
 - **📱 Descarga Única** (Azul): Para convertir un solo archivo M3U8
@@ -118,18 +140,18 @@ Este comando abre el menú principal moderno con interfaz CustomTkinter donde pu
 - **🌓 Cambio de tema**: Alterna entre modo claro y oscuro
 - **Diseño moderno**: Interfaz con esquinas redondeadas y colores atractivos
 - **Botones grandes**: Fácil navegación con descripciones claras
-- **Ejecución optimizada**: Utiliza el entorno virtual automáticamente
+- **Arquitectura modular**: Utiliza el patrón MVC para mejor organización del código
 
-#### Descarga Única (método tradicional)
+#### Ejecución desde el directorio del proyecto
 ```bash
-iniciar_convertidor.bat
+cd proyectoEstructurado
+python app/main.py
 ```
 
 ### 📱 Modo Descarga Única
 
 1. **Ejecutar el programa**
-   - Usar `iniciar_menu.bat` y seleccionar "Descarga Única" o
-   - Usar directamente `iniciar_convertidor.bat`
+   - Ejecutar `python app/main.py` y seleccionar "Descarga Única"
 
 2. **Configurar la entrada**
    - Pegar la URL del archivo M3U8 en el campo "URL M3U8"
@@ -309,8 +331,9 @@ proyectoEstructurado/
 ## Solución de Problemas
 
 ### FFmpeg no encontrado
-- Verifica que el directorio `ffmpeg/bin/` contenga `ffmpeg.exe`
+- Verifica que el directorio `bin/` contenga `ffmpeg.exe`
 - O asegúrate de que FFmpeg esté instalado en tu sistema y disponible en PATH
+- El programa detecta automáticamente FFmpeg en `bin/ffmpeg.exe` o en el PATH del sistema
 
 ### Error de conversión
 - Verifica que la URL M3U8 sea válida y accesible
